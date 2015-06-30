@@ -1,0 +1,46 @@
+To summarize:
+Read/Write/Save work OK. Save may require removal of the “modified” check box. That’s OK.
+Load does not work. Attached is the .ireg formal that is exported by the “save” function. That’s the input we’ll use. For wookie, address needs to be extended to CDh.
+Vitaliy’s source code parses the coefficient data and is not needed to support the load function. We’ll comment that out, and write a new load procedure to simply dump the contents of the .ireg file back into the device.
+ 
+The next project will be to have a simple config button for the device. The I2C will check to confirm communication and correct ID, then allow the device to be configured with a single button. The input file will be a combination of the .regv and .ireg files.
+
+ETA: <= 2 weeks
+
+
+
+
+
+
+
+Notes:
+timeout error only at home? works fine in office for some reason, but check I2CDevice.java in waitOnBits, probably change the tocnt
+
+Load seems to work now, exported as a list of addresses, no formatting or labelling yet, should be pretty quick to add if desired
+
+Added the buttons on the app for load/save config
+
+Load config not touched, currently does normal load
+Save config currently writes coeff and then overwrites coeff with dev regs
+
+
+
+NEW:
+
+Part 1:
+Script to parse out ireg to regv
+Start with r 40 = 00
+then only cycle through 3A, 3B, 3C
+
+Ex:
+
+123456
+789abc
+
+40: 00
+3A: 
+3B: 
+3C: 
+3A: 
+3B: 
+3C: 

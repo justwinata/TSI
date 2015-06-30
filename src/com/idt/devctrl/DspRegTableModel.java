@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.io.BufferedWriter;
 
 import javax.swing.table.AbstractTableModel;
 
@@ -353,7 +354,12 @@ public class DspRegTableModel extends AbstractTableModel implements DevRegTableM
 	
 	public boolean saveToFile(File file) {
 		try {
-			FileWriter fileWriter = new FileWriter(file);
+			FileWriter fileWriter;
+			if (file.getName().endsWith(".config")) {
+				fileWriter = new FileWriter(file, true);
+			}
+			else {
+				fileWriter = new FileWriter(file);}
 			//fileWriter.write(device.getName());
 			//fileWriter.write('\n');
 			for (int i = 0; i < device.getDspRegistersCount(page); i++)

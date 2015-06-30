@@ -145,6 +145,7 @@ public class DeviceControlApp {
 	private JButton readRegsBtn = null;
 	private JButton writeRegsBtn = null;
 	private JButton loadBtn = null;
+	private JButton loadConfigBtn = null;
 	private JButton saveBtn = null;
 	private JButton saveConfigBtn = null;
 	private JButton resetBtn = null;
@@ -192,9 +193,9 @@ public class DeviceControlApp {
 			appFrame = new JFrame();
 			appFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 			appFrame.setJMenuBar(getAppMenuBar());
-			appFrame.setSize(800, 535);
-			appFrame.setMinimumSize(new Dimension(800, 296));
-			appFrame.setPreferredSize(new Dimension(800, 535));
+			appFrame.setSize(1000, 535);
+			appFrame.setMinimumSize(new Dimension(1000, 296));
+			appFrame.setPreferredSize(new Dimension(1000, 535));
 			appFrame.setContentPane(getAppContentPane());
 			appFrame.setTitle("Device Registers");
 			appFrame.addWindowListener(new WindowAdapter() {
@@ -724,7 +725,9 @@ public class DeviceControlApp {
 			devToolBar.add(getWriteRegsBtn());
 			devToolBar.add(Box.createHorizontalStrut(12));
 			devToolBar.add(getLoadBtn());
+			devToolBar.add(getLoadConfigBtn());
 			devToolBar.add(getSaveBtn());
+			devToolBar.add(getSaveConfigBtn());
 			devToolBar.add(getModifiedChBx());
 			devToolBar.add(Box.createHorizontalStrut(12));
 			devToolBar.add(getDecimalTblFormat());
@@ -958,6 +961,81 @@ public class DeviceControlApp {
 		return loadBtn;
 	}
 
+		private JButton getLoadConfigBtn() {
+		if (loadConfigBtn == null) {
+			loadConfigBtn = new JButton();
+			loadConfigBtn.setText("Load from config...");
+			loadConfigBtn.setToolTipText("Load registers' values from file");
+			loadConfigBtn.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					if (currDevice != null) {
+						JFileChooser fc = new JFileChooser(System.getProperty("user.dir"));
+						if (viewTabs.getSelectedIndex() == ALL_REGS_VIEW) { 
+							if (currDevice.isModified(pageSelector.getSelectedIndex())) {
+								if (!showDeviceWarningMsg("All current changes will be lost")) {
+									return;
+								}
+							}
+							fc.setFileFilter(regsFileFilter);
+							int status = fc.showOpenDialog(appFrame);
+							if (status == JFileChooser.APPROVE_OPTION) {
+					            File file = fc.getSelectedFile();
+					            if (file.getName().endsWith(".prst")) {
+					            	if (!currDevice.loadPreset(file))
+										showDeviceErrorMsg(currDevice.getErrorMsg());
+					            } else {
+									int page = currDevice.loadFromFile(file);
+						            if (page >= 0) {
+						            	pageSelector.setSelectedIndex(page);
+						            } else {
+										showDeviceErrorMsg(currDevice.getErrorMsg());
+						            }
+					            }
+				            	updateDeviceViews();
+							}
+						} else if (viewTabs.getSelectedIndex() == SEQUENCE_VIEW) {
+							fc.setFileFilter(seqFileFilter);
+							int status = fc.showOpenDialog(appFrame);
+							if (status == JFileChooser.APPROVE_OPTION) {
+								ListSelectionModel lsm = regSeqTable.getSelectionModel();
+								int selRow = lsm.getMinSelectionIndex();
+								if (selRow < 0)
+									selRow = 0;
+					            File file = fc.getSelectedFile();
+					            selRow = regSeqTableModel.loadFromFile(file, selRow);
+					            if (selRow < 0) {
+									showDeviceErrorMsg(regSeqTableModel.getErrorMsg());
+					            } else {
+					            	lsm.setSelectionInterval(selRow, selRow);
+					            	regSeqTable.scrollRectToVisible(regSeqTable.getCellRect(selRow, 0, true));
+					            }
+							}
+						} else if (viewTabs.getSelectedIndex() == DSP_REGS_VIEW) {
+							fc.setFileFilter(indirRegFileFilter);
+							int status = fc.showOpenDialog(appFrame);
+							if (status == JFileChooser.APPROVE_OPTION) {
+					            File file = fc.getSelectedFile();
+					            if (file.getName().endsWith(".prst")) {
+					            	if (!currDevice.loadPreset(file))
+										showDeviceErrorMsg(currDevice.getErrorMsg());
+					            	updateDeviceViews();
+					            } else {
+					            	int res = dspRegsTableModel.loadFromFile(file);
+						            if (res < 0) {
+										showDeviceErrorMsg(file.getName()+" file is either corrupted or not for this chip");
+						            }
+					            }
+							}
+						}
+					} 
+				}
+			});
+		}
+		return loadConfigBtn;
+	}
+
+
 	/**
 	 * This method initializes saveBtn	
 	 * 	
@@ -1075,12 +1153,12 @@ public class DeviceControlApp {
 									return;
 								}
 							}
-							if (!dspRegsTableModel.saveToFile(file)) {
-								showDeviceErrorMsg("Saving internal registers to file failed!");
-							}
 	    				    if (!currDevice.saveToFile(pageSelector.getSelectedIndex(), file, modifiedChBx.isSelected())) {
 	 				       		showDeviceErrorMsg("Saving registers to file failed!");
 	        				}					
+							if (!dspRegsTableModel.saveToFile(file)) {
+								showDeviceErrorMsg("Saving internal registers to file failed!");
+							}
 	        			}
 					}
 				}
