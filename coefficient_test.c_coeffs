@@ -1,0 +1,216 @@
+// Device: TSI_USB-Audio0
+// Endpoint: Wolv Speakers
+// PresetCount:1
+// SampleRate:48000
+// Preset: MusicOnSpk
+
+// Memory contents
+
+MemCount:0xB0
+0x00: 0x003fefba, // EQ0, Channel 0, Filter 0
+0x01: 0xff806fb4, // EQ0, Channel 0, Filter 0
+0x02: 0x003fa0d6, // EQ0, Channel 0, Filter 0
+0x03: 0x007f904c, // EQ0, Channel 0, Filter 0
+0x04: 0xffc06f70, // EQ0, Channel 0, Filter 0
+0x05: 0x003ffa99, // EQ0, Channel 0, Filter 1
+0x06: 0xff80645e, // EQ0, Channel 0, Filter 1
+0x07: 0x003fa21b, // EQ0, Channel 0, Filter 1
+0x08: 0x007f9ba2, // EQ0, Channel 0, Filter 1
+0x09: 0xffc0634b, // EQ0, Channel 0, Filter 1
+0x0a: 0x003ffa93, // EQ0, Channel 0, Filter 2
+0x0b: 0xff80c64d, // EQ0, Channel 0, Filter 2
+0x0c: 0x003f437b, // EQ0, Channel 0, Filter 2
+0x0d: 0x007f39b3, // EQ0, Channel 0, Filter 2
+0x0e: 0xffc0c1f2, // EQ0, Channel 0, Filter 2
+0x0f: 0x00402105, // EQ0, Channel 0, Filter 3
+0x10: 0xff822e7a, // EQ0, Channel 0, Filter 3
+0x11: 0x003dc1c1, // EQ0, Channel 0, Filter 3
+0x12: 0x007dd186, // EQ0, Channel 0, Filter 3
+0x13: 0xffc21d3a, // EQ0, Channel 0, Filter 3
+0x14: 0x00408116, // EQ0, Channel 0, Filter 4
+0x15: 0xff82b6a4, // EQ0, Channel 0, Filter 4
+0x16: 0x003d0d16, // EQ0, Channel 0, Filter 4
+0x17: 0x007d495c, // EQ0, Channel 0, Filter 4
+0x18: 0xffc271d3, // EQ0, Channel 0, Filter 4
+0x19: 0x004053b2, // EQ0, Channel 0, Filter 5
+0x1a: 0xff86687c, // EQ0, Channel 0, Filter 5
+0x1b: 0x003a5069, // EQ0, Channel 0, Filter 5
+0x1c: 0x00799784, // EQ0, Channel 0, Filter 5
+0x1d: 0xffc55be4, // EQ0, Channel 0, Filter 5
+0x1e: 0x00000000, // N/A 
+0x1f: 0x00232768, // EQ0, Channel 0, Prescale 
+0x20: 0x003fefba, // EQ0, Channel 1, Filter 0
+0x21: 0xff806fb4, // EQ0, Channel 1, Filter 0
+0x22: 0x003fa0d6, // EQ0, Channel 1, Filter 0
+0x23: 0x007f904c, // EQ0, Channel 1, Filter 0
+0x24: 0xffc06f70, // EQ0, Channel 1, Filter 0
+0x25: 0x003ffa99, // EQ0, Channel 1, Filter 1
+0x26: 0xff80645e, // EQ0, Channel 1, Filter 1
+0x27: 0x003fa21b, // EQ0, Channel 1, Filter 1
+0x28: 0x007f9ba2, // EQ0, Channel 1, Filter 1
+0x29: 0xffc0634b, // EQ0, Channel 1, Filter 1
+0x2a: 0x003ffa93, // EQ0, Channel 1, Filter 2
+0x2b: 0xff80c64d, // EQ0, Channel 1, Filter 2
+0x2c: 0x003f437b, // EQ0, Channel 1, Filter 2
+0x2d: 0x007f39b3, // EQ0, Channel 1, Filter 2
+0x2e: 0xffc0c1f2, // EQ0, Channel 1, Filter 2
+0x2f: 0x00402105, // EQ0, Channel 1, Filter 3
+0x30: 0xff822e7a, // EQ0, Channel 1, Filter 3
+0x31: 0x003dc1c1, // EQ0, Channel 1, Filter 3
+0x32: 0x007dd186, // EQ0, Channel 1, Filter 3
+0x33: 0xffc21d3a, // EQ0, Channel 1, Filter 3
+0x34: 0x00408116, // EQ0, Channel 1, Filter 4
+0x35: 0xff82b6a4, // EQ0, Channel 1, Filter 4
+0x36: 0x003d0d16, // EQ0, Channel 1, Filter 4
+0x37: 0x007d495c, // EQ0, Channel 1, Filter 4
+0x38: 0xffc271d3, // EQ0, Channel 1, Filter 4
+0x39: 0x004053b2, // EQ0, Channel 1, Filter 5
+0x3a: 0xff86687c, // EQ0, Channel 1, Filter 5
+0x3b: 0x003a5069, // EQ0, Channel 1, Filter 5
+0x3c: 0x00799784, // EQ0, Channel 1, Filter 5
+0x3d: 0xffc55be4, // EQ0, Channel 1, Filter 5
+0x3e: 0x00000000, // N/A 
+0x3f: 0x00232768, // EQ0, Channel 1, Prescale 
+0x40: 0x004053b2, // EQ1, Channel 0, Filter 0
+0x41: 0xff86687c, // EQ1, Channel 0, Filter 0
+0x42: 0x003a5069, // EQ1, Channel 0, Filter 0
+0x43: 0x00799784, // EQ1, Channel 0, Filter 0
+0x44: 0xffc55be4, // EQ1, Channel 0, Filter 0
+0x45: 0x00400000, // EQ1, Channel 0, Filter 1
+0x46: 0xff8ed722, // EQ1, Channel 0, Filter 1
+0x47: 0x003526c6, // EQ1, Channel 0, Filter 1
+0x48: 0x007128de, // EQ1, Channel 0, Filter 1
+0x49: 0xffcad93a, // EQ1, Channel 0, Filter 1
+0x4a: 0x003edb6d, // EQ1, Channel 0, Filter 2
+0x4b: 0xffa359e0, // EQ1, Channel 0, Filter 2
+0x4c: 0x002c1fe6, // EQ1, Channel 0, Filter 2
+0x4d: 0x005ca620, // EQ1, Channel 0, Filter 2
+0x4e: 0xffd504ac, // EQ1, Channel 0, Filter 2
+0x4f: 0x004650ad, // EQ1, Channel 0, Filter 3
+0x50: 0xffcf4edc, // EQ1, Channel 0, Filter 3
+0x51: 0x001b119a, // EQ1, Channel 0, Filter 3
+0x52: 0x0030b124, // EQ1, Channel 0, Filter 3
+0x53: 0xffde9db9, // EQ1, Channel 0, Filter 3
+0x54: 0x0046f780, // EQ1, Channel 0, Filter 4
+0x55: 0x002517e8, // EQ1, Channel 0, Filter 4
+0x56: 0x0003384f, // EQ1, Channel 0, Filter 4
+0x57: 0xffdae818, // EQ1, Channel 0, Filter 4
+0x58: 0xfff5d030, // EQ1, Channel 0, Filter 4
+0x59: 0x00644ec8, // EQ1, Channel 0, Filter 5
+0x5a: 0x00000000, // EQ1, Channel 0, Filter 5
+0x5b: 0x00000000, // EQ1, Channel 0, Filter 5
+0x5c: 0x00000000, // EQ1, Channel 0, Filter 5
+0x5d: 0x00000000, // EQ1, Channel 0, Filter 5
+0x5e: 0x00000000, // N/A 
+0x5f: 0x00400000, // EQ1, Channel 0, Prescale 
+0x60: 0x004053b2, // EQ1, Channel 1, Filter 0
+0x61: 0xff86687c, // EQ1, Channel 1, Filter 0
+0x62: 0x003a5069, // EQ1, Channel 1, Filter 0
+0x63: 0x00799784, // EQ1, Channel 1, Filter 0
+0x64: 0xffc55be4, // EQ1, Channel 1, Filter 0
+0x65: 0x00400000, // EQ1, Channel 1, Filter 1
+0x66: 0xff8ed722, // EQ1, Channel 1, Filter 1
+0x67: 0x003526c6, // EQ1, Channel 1, Filter 1
+0x68: 0x007128de, // EQ1, Channel 1, Filter 1
+0x69: 0xffcad93a, // EQ1, Channel 1, Filter 1
+0x6a: 0x003edb6d, // EQ1, Channel 1, Filter 2
+0x6b: 0xffa359e0, // EQ1, Channel 1, Filter 2
+0x6c: 0x002c1fe6, // EQ1, Channel 1, Filter 2
+0x6d: 0x005ca620, // EQ1, Channel 1, Filter 2
+0x6e: 0xffd504ac, // EQ1, Channel 1, Filter 2
+0x6f: 0x004650ad, // EQ1, Channel 1, Filter 3
+0x70: 0xffcf4edc, // EQ1, Channel 1, Filter 3
+0x71: 0x001b119a, // EQ1, Channel 1, Filter 3
+0x72: 0x0030b124, // EQ1, Channel 1, Filter 3
+0x73: 0xffde9db9, // EQ1, Channel 1, Filter 3
+0x74: 0x0046f780, // EQ1, Channel 1, Filter 4
+0x75: 0x002517e8, // EQ1, Channel 1, Filter 4
+0x76: 0x0003384f, // EQ1, Channel 1, Filter 4
+0x77: 0xffdae818, // EQ1, Channel 1, Filter 4
+0x78: 0xfff5d030, // EQ1, Channel 1, Filter 4
+0x79: 0x00644ec8, // EQ1, Channel 1, Filter 5
+0x7a: 0x00000000, // EQ1, Channel 1, Filter 5
+0x7b: 0x00000000, // EQ1, Channel 1, Filter 5
+0x7c: 0x00000000, // EQ1, Channel 1, Filter 5
+0x7d: 0x00000000, // EQ1, Channel 1, Filter 5
+0x7e: 0x00000000, // N/A 
+0x7f: 0x00400000, // EQ1, Channel 1, Prescale 
+0x80: 0x0000b2b6, // Bass_Coef_EXT1
+0x81: 0x00000000, // Bass_Coef_EXT1
+0x82: 0xffff4d49, // Bass_Coef_EXT1
+0x83: 0x007e8197, // Bass_Coef_EXT1
+0x84: 0xffc1656d, // Bass_Coef_EXT1
+0x85: 0x0000b2b6, // Bass_Coef_EXT2
+0x86: 0x00000000, // Bass_Coef_EXT2
+0x87: 0xffff4d49, // Bass_Coef_EXT2
+0x88: 0x007e8197, // Bass_Coef_EXT2
+0x89: 0xffc1656d, // Bass_Coef_EXT2
+0x8a: 0x00000000, // Bass_Coef_NLF
+0x8b: 0x00000000, // Bass_Coef_NLF
+0x8c: 0x000010ce, // Bass_Coef_LMT
+0x8d: 0x0000219d, // Bass_Coef_LMT
+0x8e: 0x000010ce, // Bass_Coef_LMT
+0x8f: 0x007a65c3, // Bass_Coef_LMT
+0x90: 0xffc55703, // Bass_Coef_LMT
+0x91: 0x003dcdc3, // Bass_Coef_CTO
+0x92: 0xff846478, // Bass_Coef_CTO
+0x93: 0x003dcdc3, // Bass_Coef_CTO
+0x94: 0x007b85d5, // Bass_Coef_CTO
+0x95: 0xffc44ec7, // Bass_Coef_CTO
+0x96: 0x00000000, // Bass_MIX
+0x97: 0x0027dcfd, // Treb_Coef_EXT1
+0x98: 0xffb04605, // Treb_Coef_EXT1
+0x99: 0x0027dcfd, // Treb_Coef_EXT1
+0x9a: 0x00468a27, // Treb_Coef_EXT1
+0x9b: 0xffe71633, // Treb_Coef_EXT1
+0x9c: 0x0027dcfd, // Treb_Coef_EXT2
+0x9d: 0xffb04605, // Treb_Coef_EXT2
+0x9e: 0x0027dcfd, // Treb_Coef_EXT2
+0x9f: 0x00468a27, // Treb_Coef_EXT2
+0xa0: 0xffe71633, // Treb_Coef_EXT2
+0xa1: 0x00000000, // Treb_Coef_NLF
+0xa2: 0x00000000, // Treb_Coef_NLF
+0xa3: 0x000e718b, // Treb_Coef_LMT
+0xa4: 0x001ce317, // Treb_Coef_LMT
+0xa5: 0x000e718b, // Treb_Coef_LMT
+0xa6: 0xffe811b5, // Treb_Coef_LMT
+0xa7: 0x001e281d, // Treb_Coef_LMT
+0xa8: 0x00400000, // Treb_Coef_CTO
+0xa9: 0xff847a2b, // Treb_Coef_CTO
+0xaa: 0x003bb139, // Treb_Coef_CTO
+0xab: 0x007b85d5, // Treb_Coef_CTO
+0xac: 0xffc44ec7, // Treb_Coef_CTO
+0xad: 0x00000000, // Treb_MIX
+0xae: 0x00000000, // 3D_Coef
+0xaf: 0x00400000, // 3D_Mix
+
+
+// Register contents
+
+RegCount:0x1A
+0x20: 0xee, // Config 1 
+0x25: 0x00, // Comp/Lim/Exp (CLE) Control 
+0x39: 0x00, // Effects Control 
+0x00: 0x79, // Left HP Vol 
+0x01: 0x79, // Right HP Vol 
+0x02: 0x7b, // Left SPK Vol 
+0x03: 0x7b, // Right SPK Vol 
+0x26: 0x00, // CLE Make-up Gain 
+0x27: 0xff, // Compressor Threshold 
+0x28: 0x01, // Compressor Ratio 
+0x29: 0x67, // Compressor Attack Time (Low) 
+0x2a: 0xb1, // Compressor Attack Time (High) 
+0x2b: 0x67, // Compressor Release Time (Low) 
+0x2c: 0xb1, // Compressor Release Time (High) 
+0x2d: 0xfc, // Limiter Threshold 
+0x2e: 0xff, // Limiter Target 
+0x2f: 0x67, // Limiter Attack Time (Low) 
+0x30: 0xb1, // Limiter Attack Time (High) 
+0x31: 0x67, // Limiter Release Time (Low) 
+0x32: 0xb1, // Limiter Release Time (High) 
+0x33: 0xff, // Expander Threshold 
+0x34: 0x01, // Expander Ratio 
+0x35: 0x67, // Expander Attack Time (Low) 
+0x36: 0xb1, // Expander Attack Time (High) 
+0x37: 0x67, // Expander Release Time (Low) 
+0x38: 0xb1, // Expander Release Time (High) 
