@@ -27,6 +27,10 @@ Save config currently writes coeff and then overwrites coeff with dev regs
 
 NEW:
 
+1)      This is a text file program to convert the .ireg format of the coefficient file into a .regv type of file. The coefficient values are 24-bit words, broken into High-Mid-Low. The low byte is written to 3Ah, the mid to 3Bh, and the write is completed by writing the high to 3Ch. The part will increment automatically, so the pointer only needs to be initialized.
+
+2)      The second part will be a simple program to take the text file and write all the registers in sequence to the device. It’ll need to link the file location, and then a single button “program” to configure the device. The text file will be a combination of the file generated above and other register initialization settings. The format will be similar to a .regv file.
+
 Part 1:
 Script to parse out ireg to regv
 Start with r 40 = 00
@@ -38,9 +42,9 @@ Ex:
 789abc
 
 40: 00
-3A: 
-3B: 
-3C: 
-3A: 
-3B: 
-3C: 
+3A: 56
+3B: 34
+3C: 12
+3A: bc
+3B: 9a
+3C: 78

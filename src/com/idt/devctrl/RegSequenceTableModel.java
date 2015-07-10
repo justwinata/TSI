@@ -446,7 +446,10 @@ public class RegSequenceTableModel extends AbstractTableModel implements DevRegT
 								valid = true;
 							}
 						} else {
-							if (ln.startsWith("#")) {
+							if (ln.equals("WRITE")) {
+								writeAll();
+							}
+							else if (ln.startsWith("#")) {
 					    		itm = insertItemAt(startIdx);
 					    		startIdx++;
 								if (ln.length() > 1)

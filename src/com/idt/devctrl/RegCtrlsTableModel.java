@@ -384,7 +384,10 @@ public class RegCtrlsTableModel extends AbstractTableModel implements DevRegTabl
 								valid = true;
 							}
 						} else {
-							if (ln.startsWith("#")) {
+							if (ln.equals("WRITE")) {
+								writeAll();
+							}
+							else if (ln.startsWith("#")) {
 					    		itm = insertItemAt(startIdx);
 					    		startIdx++;
 								if (ln.length() > 1)

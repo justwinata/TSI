@@ -499,30 +499,35 @@ class I2CDevice implements StateController, Settings {
 							if (ln.equals(name))
 								valid = true;
 						} else {
-					    	reg = -1;
-					    	val = null;
-							String[] tokens = ln.split("[:;#=\\s]+");
-						    for (int i=0; i<tokens.length-1; i+=2) {
-						    	if (tokens[i].equalsIgnoreCase(Register.REG_ADDR_TAG)) {
-						    		 reg = Integer.parseInt(tokens[i+1], 16);
-						    	} else if (tokens[i].equalsIgnoreCase(Register.REG_NUM_TAG)) {
-						    		 reg = Integer.parseInt(tokens[i+1]);
-						    	} else if (tokens[i].equalsIgnoreCase(Register.REG_VAL_TAG)) {
-						    		 val = tokens[i+1];
-						    	} else if (tokens[i].equalsIgnoreCase(Register.PAGE_TAG)) {
-						    		 page = Integer.parseInt(tokens[i+1]);
-						    	}
-						    }
-						    if (isValidRegister(page, reg)) {
-						    	Register register = getRegister(page, reg);
-						    	if (register != null && val != null && register.isValidValue(val)) {
-						    		register.modifyValue(val, 16);
-						    	} else {
-						    		status = FAILURE;
-						    		errMsg = file.getName() + " - Invalid reg or data: " + String.format("p %x r %02X v %s", page, reg, val);
-						    		return -1;
-						    	}
-						    }
+							if (ln.equals("WRITE")) {
+							//	writeAll();
+							}
+							else {
+								reg = -1;
+								val = null;
+								String[] tokens = ln.split("[:;#=\\s]+");
+								for (int i=0; i<tokens.length-1; i+=2) {
+									if (tokens[i].equalsIgnoreCase(Register.REG_ADDR_TAG)) {
+										reg = Integer.parseInt(tokens[i+1], 16);
+									} else if (tokens[i].equalsIgnoreCase(Register.REG_NUM_TAG)) {
+										reg = Integer.parseInt(tokens[i+1]);
+									} else if (tokens[i].equalsIgnoreCase(Register.REG_VAL_TAG)) {
+										val = tokens[i+1];
+									} else if (tokens[i].equalsIgnoreCase(Register.PAGE_TAG)) {
+										page = Integer.parseInt(tokens[i+1]);
+									}
+								}		
+								if (isValidRegister(page, reg)) {
+									Register register = getRegister(page, reg);
+									if (register != null && val != null && register.isValidValue(val)) {
+										register.modifyValue(val, 16);
+									} else {
+										status = FAILURE;
+										errMsg = file.getName() + " - Invalid reg or data: " + String.format("p %x r %02X v %s", page, reg, val);
+										return -1;
+									}
+								}
+							}
 						}
 					}
 				}

@@ -235,8 +235,6 @@ public class DspRegTableModel extends AbstractTableModel implements DevRegTableM
 				String ln = sc.nextLine();
 				device.getDspRegister(reg, page).modifyValue(ln, 16);
 				reg++;
-			
-				
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -373,6 +371,53 @@ public class DspRegTableModel extends AbstractTableModel implements DevRegTableM
 			System.out.println(ioEx.toString());
 			return false;
 		}
+		iregtoregv(file);
 		return true;
+	}
+	public void iregtoregv(File file) {
+		Scanner sc = null;
+		FileWriter fileWriter = null;
+		try {
+			sc = new Scanner(file);
+			try {
+				fileWriter = new FileWriter(file + ".regv");
+				fileWriter.write(device.getName());
+				fileWriter.write('\n');
+				fileWriter.write(String.format("%s:%02X %s:%02x %s:%d #%s\n", 
+						Register.REG_ADDR_TAG, 64, 
+						Register.REG_VAL_TAG, 0, 
+						Register.PAGE_TAG, 0, 
+						"N/A"));	
+				while (sc.hasNextLine()) {
+					String val = sc.nextLine();
+					String hi = val.substring(0,2);
+					String mid = val.substring(2,4);
+					String lo = val.substring(4,6);
+					//fileWriter.write("string: " + val +"\nhi: " +hi+"\nmid: "+mid+"\nlo: "+lo+"\n");
+					fileWriter.write(String.format("%s:%02X %s:"+lo+" %s:%d #%s\n", 
+						Register.REG_ADDR_TAG, 58, 
+						Register.REG_VAL_TAG, 
+						Register.PAGE_TAG, 0, 
+						"N/A"));
+					fileWriter.write(String.format("%s:%02X %s:"+mid+" %s:%d #%s\n", 
+						Register.REG_ADDR_TAG, 59, 
+						Register.REG_VAL_TAG, 
+						Register.PAGE_TAG, 0, 
+						"N/A"));
+					fileWriter.write(String.format("%s:%02X %s:"+hi+" %s:%d #%s\n", 
+						Register.REG_ADDR_TAG, 60, 
+						Register.REG_VAL_TAG, 
+						Register.PAGE_TAG, 0, 
+						"N/A"));
+				}	
+				fileWriter.close();
+			} catch(IOException ioEx) {
+				System.out.println(ioEx.toString());
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		sc.close();
 	}
 }
